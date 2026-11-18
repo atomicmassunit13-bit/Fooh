@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070817">
+<title>Happy Birthday Kiana 💙</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800;900&family=Great+Vibes&display=swap');
+
+:root {
+  --bg:#070817;
+  --pink:#ff58c8;
+  --blue:#42d9ff;
+  --indigo:#7771ff;
+  --text:#f7f5ff;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Vazirmatn,sans-serif;
+  overflow-x:hidden;
+}
+canvas#stars {
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+}
+.aurora {
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 15% 20%,#26227c77,transparent 45%),
+    radial-gradient(ellipse at 85% 70%,#6b145a55,transparent 45%),
+    radial-gradient(ellipse at 50% 100%,#004f7955,transparent 55%);
+  animation:aurora 9s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  from {filter:hue-rotate(0deg);transform:scale(1)}
+  to {filter:hue-rotate(35deg);transform:scale(1.15)}
+}
+nav {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 7%;
+  font-size:12px;
+  letter-spacing:3px;
+  direction:ltr;
+}
+.logo {
+  color:var(--blue);
+  font-weight:900;
+  text-shadow:0 0 20px #42d9ff88;
+}
+.nav-right {color:#aaa8d2}
+.hero {
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:55px 18px;
+  position:relative;
+}
+.eyebrow {
+  letter-spacing:6px;
+  color:#a6a5ff;
+  font-size:12px;
+  direction:ltr;
+}
+h1 {
+  font-family:Georgia,serif;
+  direction:ltr;
+  font-size:clamp(55px,12vw,135px);
+  line-height:1.05;
+  margin:30px 0 10px;
+  background:linear-gradient(115deg,#7eeaff,#fff,#ff77d5,#9b8aff);
+  background-size:250%;
+  color:transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+  animation:shine 6s linear infinite;
+  filter:drop-shadow(0 0 25px #7771ff55);
+}
+@keyframes shine {
+  to {background-position:250%}
+}
+.hero h2 {
+  font-family:"Great Vibes",cursive;
+  font-weight:400;
+  font-size:clamp(50px,10vw,105px);
+  color:#ff91df;
+  margin:0 0 25px;
+  text-shadow:0 0 35px #ff58c888;
+  direction:ltr;
+}
+.subtitle {
+  max-width:550px;
+  color:#c5c2e0;
+  font-size:15px;
+  line-height:2.5;
+}
+.scroll {
+  margin-top:60px;
+  color:#9d9ac8;
+  font-size:11px;
+  letter-spacing:3px;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce {
+  50% {transform:translateY(12px)}
+}
+section {
+  padding:90px 20px;
+  text-align:center;
+}
+.section-title {
+  font-size:clamp(26px,5vw,43px);
+  margin-bottom:15px;
+}
+.section-subtitle {
+  color:#a7a5c7;
+  font-size:13px;
+}
+.photo-card {
+  position:relative;
+  width:min(340px,85vw);
+  margin:65px auto 25px;
+  padding:9px;
+  border-radius:26px;
+  background:linear-gradient(135deg,var(--blue),var(--indigo),var(--pink));
+  box-shadow:
+    0 0 45px #7771ff55,
+    0 0 100px #ff58c822;
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float {
+  50% {transform:translateY(-16px)}
+}
+.photo-inner {
+  position:relative;
+  overflow:hidden;
+  border-radius:19px;
+  background:#101229;
+  aspect-ratio:4/5;
+}
+.photo-inner img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.photo-inner:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 65%,#08081999);
+  pointer-events:none;
+}
+.photo-caption {
+  color:#c5bdfc;
+  letter-spacing:4px;
+  font-size:12px;
+  direction:ltr;
+  margin-top:30px;
+}
+.message {
+  max-width:670px;
+  margin:40px auto;
+  padding:45px 28px;
+  background:linear-gradient(135deg,#171b36cc,#1a102dcc);
+  border:1px solid #8581ff44;
+  border-radius:25px;
+  box-shadow:0 20px 70px #0005;
+  backdrop-filter:blur(15px);
+}
+.message p {
+  font-size:15px;
+  color:#d5d2ef;
+  line-height:3;
+}
+.neon {
+  color:var(--pink);
+  text-shadow:0 0 20px #ff58c866;
+}
+.btn {
+  position:relative;
+  display:inline-block;
+  margin:20px 8px;
+  padding:16px 34px;
+  border:1px solid #ffffff44;
+  border-radius:50px;
+  color:white;
+  background:linear-gradient(110deg,#5546ca,#bd3eaa);
+  font-family:inherit;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow:0 0 30px #bd3eaa55;
+  transition:.3s;
+}
+.btn:hover {
+  transform:translateY(-5px);
+  box-shadow:0 0 50px #ff58c899;
+}
+.btn.secondary {
+  background:#10172d;
+  border-color:#42d9ff88;
+  box-shadow:0 0 25px #42d9ff33;
+}
+.gift {
+  font-size:90px;
+  display:inline-block;
+  cursor:pointer;
+  filter:drop-shadow(0 0 30px #ff58c888);
+  animation:float 4s infinite;
+  user-select:none;
+}
+.gift:hover {transform:scale(1.1)}
+#secret {
+  display:none;
+  max-width:520px;
+  margin:25px auto;
+  padding:25px;
+  background:#1c153b;
+  border:1px solid #ff58c877;
+  border-radius:20px;
+  line-height:2.5;
+  animation:appear .7s ease;
+}
+@keyframes appear {
+  from {opacity:0;transform:translateY(25px)}
+  to {opacity:1;transform:translateY(0)}
+}
+footer {
+  padding:45px 20px;
+  text-align:center;
+  color:#8e8ba9;
+  border-top:1px solid #ffffff16;
+  font-size:12px;
+  letter-spacing:2px;
+}
+.heart {
+  position:fixed;
+  bottom:-50px;
+  pointer-events:none;
+  z-index:5;
+  animation:rise linear forwards;
+}
+@keyframes rise {
+  to {transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+.confetti {
+  position:fixed;
+  top:-20px;
+  width:9px;
+  height:14px;
+  z-index:20;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+@keyframes fall {
+  to {transform:translateY(110vh) rotate(900deg);opacity:0}
+}
+.reveal {
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .9s,transform .9s;
+}
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+@media(max-width:600px){
+  nav {padding:20px 6%}
+  .hero {min-height:85vh}
+  section {padding:65px 18px}
+  .message {padding:25px 20px}
+  .btn {padding:14px 25px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal {opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="aurora"></div>
+
+<nav>
+  <div class="logo">K I A N A ✦</div>
+  <div class="nav-right">A SPECIAL DAY • ✧</div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="eyebrow">TODAY IS ALL ABOUT YOU</div>
+    <h1>HAPPY<br>BIRTHDAY</h1>
+    <h2>Kiana</h2>
+    <p class="subtitle">
+      امشب ستاره‌ها یه دلیل دیگه برای درخشیدن دارن...
+      چون امروز روز تولد توئه! 💙
+    </p>
+    <button class="btn" onclick="celebrate()">
+      ✨ شروع جشن
+    </button>
+    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+  </div>
+
+  <section class="reveal">
+    <h2 class="section-title">✦ The Birthday Star ✦</h2>
+    <p class="section-subtitle">
+      A little piece of the universe, just for you.
+    </p>
+
+    <div class="photo-card">
+      <div class="photo-inner">
+        <!-- عکس کیانا را در گیت‌هاب با نام kiana.jpg آپلود کن -->
+        <img src="kiana.jpg" alt="عکس کیانا"
+          onerror="this.onerror=null;this.src='https://placehold.co/600x750/14152e/fb83db?text=KIANA';">
+      </div>
+    </div>
+    <div class="photo-caption">YOU ARE THE MOMENT ✧</div>
+  </section>
+
+  <section class="reveal">
+    <h2 class="section-title">💌 یه پیام برای کیانا</h2>
+    <div class="message">
+      <p>
+        کیانای عزیز، تولدت مبارک! 💗
+        <br>
+        امیدوارم سال جدید زندگیت پر از اتفاق‌های قشنگ،
+        آرزوهای برآورده‌شده و لحظه‌هایی باشه
+        که از ته دل خوشحالت می‌کنن.
+        <br><br>
+        همیشه به اندازه ستاره‌های آسمون
+        دلیل برای خوشحال بودن داشته باشی.
+        <br>
+        <strong class="neon">Happy Birthday, Kiana! ✨</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2 class="section-title">🎁 A Secret Gift</h2>
+    <p class="section-subtitle">
+      یه سورپرایز کوچولو منتظرته!
+    </p>
+    <div class="gift" role="button" tabindex="0"
+      aria-label="باز کردن هدیه"
+      onclick="openGift()"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGift()}">
+      🎁
+    </div>
+    <div>
+      <button class="btn secondary" onclick="openGift()">
+        باز کردن هدیه 💝
+      </button>
+    </div>
+    <div id="secret" aria-live="polite">
+      <h2 class="neon">For You, Kiana 💖</h2>
+      این یه هدیه مجازیه، اما آرزوش واقعیه:
+      <br>
+      امیدوارم هر روزت قشنگ‌تر از دیروز باشه،
+      و هیچ‌وقت لبخند از روزهات کم نشه.
+      <br>
+      ✨ تولدت هزار بار مبارک ✨
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2 class="section-title">Make a Wish 🌙</h2>
+    <p class="section-subtitle">
+      چشماتو ببند، یه آرزو کن و دکمه رو بزن!
+    </p>
+    <button class="btn" onclick="wish()">
+      🌟 آرزو کردم!
+    </button>
+    <p id="wishText" aria-live="polite"></p>
+  </section>
+</main>
+
+<footer>
+  MADE WITH ✦ FOR KIANA
+  <br><br>
+  HAPPY BIRTHDAY 💙
+</footer>
+
+<script>
+// آسمان پرستاره
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+let stars=[];
+let w,h,dpr;
+
+function resize(){
+  dpr=Math.min(devicePixelRatio||1,2);
+  w=innerWidth;
+  h=innerHeight;
+  canvas.width=w*dpr;
+  canvas.height=h*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  stars=Array.from({length:Math.min(180,Math.floor(w*h/5000))},()=>({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    r:Math.random()*1.6+.3,
+    speed:Math.random()*.35+.08,
+    phase:Math.random()*6.28
+  }));
+}
+addEventListener("resize",resize);
+resize();
+
+let frame=0;
+function drawStars(){
+  ctx.clearRect(0,0,w,h);
+  frame++;
+  stars.forEach(s=>{
+    s.y+=s.speed;
+    if(s.y>h){s.y=0;s.x=Math.random()*w}
+    const alpha=.25+.65*(.5+.5*Math.sin(frame*.025+s.phase));
+    ctx.beginPath();
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(185,203,255,${alpha})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+
+// کاغذ رنگی
+function celebrate(){
+  const colors=["#ff58c8","#42d9ff","#7771ff","#ffffff","#ffcfec"];
+  for(let i=0;i<130;i++){
+    const piece=document.createElement("div");
+    piece.className="confetti";
+    piece.style.left=Math.random()*100+"vw";
+    piece.style.background=colors[Math.floor(Math.random()*colors.length)];
+    piece.style.animationDuration=(2.5+Math.random()*3)+"s";
+    piece.style.animationDelay=Math.random()*.8+"s";
+    piece.style.borderRadius=Math.random()>.5?"50%":"2px";
+    document.body.appendChild(piece);
+    piece.addEventListener("animationend",()=>piece.remove());
+  }
+}
+
+// قلب‌های شناور
+function spawnHeart(){
+  if(document.hidden)return;
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.textContent=["💗","💙","💜","✨"][Math.floor(Math.random()*4)];
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(12+Math.random()*18)+"px";
+  heart.style.opacity=".75";
+  heart.style.animationDuration=(5+Math.random()*5)+"s";
+  document.body.appendChild(heart);
+  heart.addEventListener("animationend",()=>heart.remove());
+}
+setInterval(spawnHeart,850);
+
+// هدیه
+function openGift(){
+  const secret=document.getElementById("secret");
+  secret.style.display="block";
+  celebrate();
+  secret.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+// آرزو
+function wish(){
+  document.getElementById("wishText").textContent=
+    "✨ امیدوارم آرزوت به قشنگ‌ترین شکل ممکن برآورده بشه! 💙";
+  celebrate();
+}
+
+// ظاهر شدن بخش‌ها هنگام اسکرول
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
